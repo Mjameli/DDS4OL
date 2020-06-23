@@ -1,0 +1,291 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>www.sc.cit-ec.uni-bielefeld.de</groupId>
+  <artifactId>matoll</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <description>multilingual lexicalization of ontologies</description>
+  
+  <repositories>
+    <repository>
+      <id>central</id>
+      <name>Central Repository</name>
+      <url>http://insecure.repo1.maven.org/maven2</url> <!-- the https you've been looking for -->
+      <layout>default</layout>
+      <snapshots>
+        <enabled>false</enabled> <!-- or set to true if desired, default is false -->
+      </snapshots>
+    </repository>
+    
+    
+  
+  </repositories>
+  <dependencies>
+  	  	
+      
+<dependency>
+    <groupId>org.deeplearning4j</groupId>
+    <artifactId>deeplearning4j-nlp</artifactId>
+    <version>0.9.1</version>
+</dependency>
+
+
+
+
+<dependency>
+    <groupId>com.robrua.nlp.models</groupId>
+    <artifactId>easy-bert-uncased-L-12-H-768-A-12</artifactId>
+    <version>1.0.0</version>
+  </dependency>
+
+<dependency>
+  <groupId>com.robrua.nlp</groupId>
+  <artifactId>easy-bert</artifactId>
+  <version>1.0.3</version>
+</dependency>
+
+
+  
+
+<dependency>
+    <groupId>org.deeplearning4j</groupId>
+    <artifactId>deeplearning4j-nn</artifactId>
+    <version>0.9.0</version>
+</dependency>
+          <dependency>
+                <groupId>org.apache.jena</groupId>
+                <artifactId>jena-arq</artifactId>
+                <version>3.0.0</version>
+               <type>jar</type>
+          </dependency>
+  	<dependency>
+                <groupId>org.openrdf.sesame</groupId>
+                <artifactId>sesame-rio-api</artifactId>
+                <version>2.8.4</version>
+        </dependency>
+  	 <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>2.4</version>
+        </dependency>
+  	
+        <dependency>
+ <groupId>org.nd4j</groupId>
+ <artifactId>nd4j-native</artifactId>
+ <version>0.9.1</version>
+</dependency>
+        
+        <dependency>
+                <groupId>org.apache.jena</groupId>
+                <artifactId>jena-core</artifactId>
+                <version>3.0.0</version>
+        </dependency>
+  	<dependency>
+  		<groupId>org.apache.logging.log4j</groupId>
+  		<artifactId>log4j-api</artifactId>
+  		<version>2.1</version>
+  	</dependency>
+        <dependency>
+            <groupId>net.sf.trove4j</groupId>
+            <artifactId>trove4j</artifactId>
+            <version>3.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>tw.edu.ntu.csie</groupId>
+            <artifactId>libsvm</artifactId>
+            <version>3.17</version>
+        </dependency>
+        
+  	<!--<dependency>
+  		<groupId>www.sc.cit-ec.uni-bielefeld.de</groupId>
+  		<artifactId>bimmel</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>-->
+        <dependency>
+            <groupId>org.jgrapht</groupId>
+                  <artifactId>jgrapht-core</artifactId>
+           <version>0.9.1</version>
+        </dependency>
+          <dependency>
+                <groupId>jgraph</groupId>
+                <artifactId>jgraph</artifactId>
+                <version>5.13.0.0</version>
+        </dependency>
+        
+  
+  	<!--<dependency>
+  		<groupId>nz.ac.waikato.cms.moa</groupId>
+  		<artifactId>weka-package</artifactId>
+  		<version>2014.04</version>
+  	</dependency>-->
+        <dependency>
+                <groupId>nz.ac.waikato.cms.weka</groupId>
+                <artifactId>weka-stable</artifactId>
+                <version>3.6.12</version>
+        </dependency>
+  	<dependency>
+  		<groupId>edu.mit</groupId>
+  		<artifactId>jwi</artifactId>
+  		<version>2.2.3</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>de.tudarmstadt.ukp.jwktl</groupId>
+  		<artifactId>jwktl</artifactId>
+  		<version>1.0.1</version>
+  	</dependency>
+  	<dependency>
+  		<groupId>org.apache.logging.log4j</groupId>
+  		<artifactId>log4j-core</artifactId>
+  		<version>2.2</version>
+  	</dependency>
+        
+        <dependency>
+  		<groupId>edu.stanford.nlp</groupId>
+  		<artifactId>stanford-corenlp</artifactId>
+  		<version>3.5.2</version>
+  	</dependency>
+        
+        <dependency>
+  		<groupId>edu.stanford.nlp</groupId>
+  		<artifactId>stanford-corenlp</artifactId>
+  		<version>3.5.2</version>
+                <classifier>models</classifier>
+  	</dependency>
+  <!--  <dependency>
+      <groupId>org.jgrapht</groupId>
+      <artifactId>jgrapht-jdk1.5</artifactId>
+      <version>0.7.3</version>
+      <type>jar</type>
+    </dependency>-->
+    <dependency>
+      <groupId>org.jgrapht</groupId>
+      <artifactId>jgrapht-jdk1.5</artifactId>
+      <version>0.7.3</version>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>citec.de</groupId>
+      <artifactId>lemon.api</artifactId>
+      <version>1.0</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>SentencePreprocessing</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>FirstQA</groupId>
+      <artifactId>FirstQA</artifactId>
+      <version>1</version>
+    </dependency>
+    <dependency>
+      <groupId>de.jungblut.glove</groupId>
+      <artifactId>glove</artifactId>
+      <version>0.3</version>
+      <type>jar</type>
+    </dependency>
+  </dependencies>
+  <build>
+  <plugins>
+      
+    
+    <plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-jar-plugin</artifactId>
+      <version>2.4</version>
+      <configuration>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <mainClass>de.citec.sc.matoll.process.Matoll</mainClass>
+          </manifest>
+        </archive>
+      </configuration>
+    </plugin>
+    
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <configuration>
+           <source>8</source>
+           <target>8</target>
+         </configuration>
+        <version>3.3</version>
+    </plugin>
+    
+    <!--to build jar with all dependencies,
+    mvn clean compile assembly:single-->
+   <!-- <plugin>
+      <artifactId>maven-assembly-plugin</artifactId>
+      <configuration>
+        <archive>
+          <manifest>
+            <mainClass>fully.qualified.MainClass</mainClass>
+          </manifest>
+        </archive>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+      </configuration>
+    </plugin>-->
+  
+  <plugin>  
+   <groupId>org.codehaus.mojo</groupId>  
+   <artifactId>exec-maven-plugin</artifactId>  
+   <version>1.1.1</version>  
+   <executions>  
+    <execution>  
+     <phase>matoll</phase>  
+     <goals>  
+      <goal>java</goal>  
+     </goals>  
+     <configuration>  
+      <mainClass>de.citec.sc.matoll.process.Matoll</mainClass>  
+	  <extraJvmArguments>-Xmx4096m</extraJvmArguments>
+     <argLine>-Xmx4096m</argLine>
+	 <environmentVariables>
+   <MAVEN_OPTS>-Xmx4096m</MAVEN_OPTS> 
+   </environmentVariables>
+     </configuration>  
+    </execution>  
+   
+   </executions>  
+   
+   
+  </plugin>  
+  
+    <!-- Mehdi: Uncomment the following two plugings to generate a jar file with all dependencies-->
+  <!--
+  <plugin>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <executions>
+            <execution>
+                <phase>install</phase>
+                <goals>
+                    <goal>copy-dependencies</goal>
+                </goals>
+                <configuration>
+                    <outputDirectory>${project.build.directory}/lib</outputDirectory>
+                </configuration>
+            </execution>
+        </executions>
+    </plugin>
+    <plugin>
+        <artifactId>maven-jar-plugin</artifactId>
+        <configuration>
+            <archive>
+                <manifest>
+                    <addClasspath>true</addClasspath>
+                    <classpathPrefix>lib/</classpathPrefix>
+                    <mainClass>${mainClass}</mainClass>
+                </manifest>
+            </archive>
+        </configuration>
+    </plugin>
+    
+    -->
+ </plugins>  
+
+
+</build>
+    <name>matoll_sc</name>
+</project>
