@@ -26,12 +26,8 @@ http://dblexipedia.org/public/Input_EN.tar.gz
 resources/Mappings
 ```
 
-5. Install the project with:
-```
-mvn install
-```
 
-#Getting Started
+##Getting Started
 Before running the JAVA ontology lexicon generator, run the Python word embeddings server as:
 ```
 python PythonServers/FTBERTServer.py
@@ -40,7 +36,7 @@ python PythonServers/FTBERTServer.py
 To gernerate ontology lexicon by default configuration, run the following MAVEN commands:
 ```
 mvn clean && mvn install
-mvn exec:java -Dexec.mainClass="process.Matoll" -Dexec.args="--mode=train /path/to/inputMappings/ /path/to/config.xml"
+mvn exec:java -Dexec.mainClass="process.MatollELMOandBERTAllthresholdAllMethod" -Dexec.args="--mode=train /path/to/inputMappings/ /path/to/config.xml"
 ```
 
 You can change the default cofiguaration in config.xml file.
@@ -48,8 +44,9 @@ You can change the default cofiguaration in config.xml file.
 
 ##Evaluation
 To evalute the generated ontology lexicon, run:
+```
 mvn exec:java -e -Dexec.mainClass="evaluation.RunEvaluationAll" -Dexec.args="/path/to/output/Ontologylexicon/filePattern"
-
+```
 "filePattern" is the name of the generated ontology lexicon file in which the similaritymeasure and threshold are replaced by "#SIM_METHOD#" and "#SIM_THRESHOLD#", respectively(e.g. Autogen2020_BERT_#SIM_METHOD#_#SIM_THRESHOLD#.ttl)
 
 ##Other embeddings
