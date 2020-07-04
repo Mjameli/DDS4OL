@@ -1,3 +1,13 @@
 #!/usr/bin/env bash
-mvn clean && mvn install
-mvn exec:java -Dexec.mainClass="de.citec.sc.matoll.process.Matoll" -Dexec.args="--mode=train /Users/swalter/Desktop/test_input/ /Users/swalter/Desktop/config.xml"
+mvn install
+
+#NOte: the code for CoreBert is same as ELmo. Just run different python server
+mvn exec:java -e -Dexec.mainClass="process.MatollELMOandBERTAllthresholdAllMethod" -Dexec.args="--mode=train resources/Mappings
+ config.xml "
+
+
+
+
+
+
+

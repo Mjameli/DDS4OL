@@ -1,9 +1,9 @@
 <Config>
     <Language>EN</Language>
-    <Coreference>True</Coreference>
+    <Coreference>False</Coreference>
     <GoldStandardLexicon>../lexica/dbpedia_en.rdf</GoldStandardLexicon>
-    <OutputLexicon>d:\\temp\\autogen01_06_2019_GoldPropOnly.lex</OutputLexicon>
-    <Output>d:\\temp\\autogen01_06_2019_GoldPropOnly.eval</Output>
+    <OutputLexicon>resources/OutputLexicon/autogen2020_04_01_FTBert</OutputLexicon>
+    <Output>resources/autogen2020_04_01_FTBert.eval</Output>
     <NumLexItems>50000</NumLexItems>
     <doStatistics>False</doStatistics>
 </Config>

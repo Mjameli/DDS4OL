@@ -27,7 +27,7 @@ resources/Mappings
 ```
 
 
-##Getting Started
+## Getting Started
 Before running the JAVA ontology lexicon generator, run the Python word embeddings server as:
 ```
 python PythonServers/FTBERTServer.py
@@ -42,14 +42,14 @@ mvn exec:java -Dexec.mainClass="process.MatollELMOandBERTAllthresholdAllMethod" 
 You can change the default cofiguaration in config.xml file.
 
 
-##Evaluation
+## Evaluation
 To evalute the generated ontology lexicon, run:
 ```
 mvn exec:java -e -Dexec.mainClass="evaluation.RunEvaluationAll" -Dexec.args="/path/to/output/Ontologylexicon/filePattern"
 ```
-"filePattern" is the name of the generated ontology lexicon file in which the similaritymeasure and threshold are replaced by "#SIM_METHOD#" and "#SIM_THRESHOLD#", respectively(e.g. Autogen2020_BERT_#SIM_METHOD#_#SIM_THRESHOLD#.ttl)
+`"filePattern"` is the name of the generated ontology lexicon file in which the similaritymeasure and threshold are replaced by `#SIM_METHOD#` and `#SIM_THRESHOLD#`, respectively(e.g. `Autogen2020_BERT_#SIM_METHOD#_#SIM_THRESHOLD#.ttl`)
 
-##Other embeddings
+## Other embeddings
 Other word embeddings can be used instead of BERT. For each word embeddings, run it's specific Python server and JAVA program. See the following folders for more Python Server and Java processors, respectively:
 
 ```
