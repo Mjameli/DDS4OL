@@ -60,7 +60,7 @@ import org.jgrapht.UndirectedGraph;
 import org.jgrapht.alg.KShortestPaths;
 import org.jgrapht.graph.SimpleGraph;
 
-public class MatollELMOAllthresholdAllMethod {
+public class MatollELMOandBERTAllthresholdAllMethod {
 
 //	public static Logger logger = LogManager.getLogger(Matoll.class.getName());
     /**

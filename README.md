@@ -1,49 +1,83 @@
-#  M-ATOLL
+# Denoising Distant Supervision for Ontology Lexicalization using Semantic Similarity Measures
 
-M-ATOLL consists of two different approaches, one called dependency-based approach and one called label-based approach. The MATOLL-API itself can be used independently from both approaches to create,load, manipulate or write [lemon] (http://lemon-model.net) based lexica.
+Ontology lexicalization aims to provide information about how the elements of an ontology are verbalized in a given language. Most ontology lexicalization techniques require labeled training data, which are usually generated automatically using the distant supervision technique. This technique is based upon the assumption that if a sentence contains two entities of a triple in a knowledge base, it expresses the relation stated in that triple. This assumption is very simplistic and would lead to generating wrong mappings between sentences and knowledge base triples. 
 
-
-## Dependency-based Approach
-
-### How to run this approach?
-The easiest way to run this approach is using maven.
+This repository implements a new method to denoising distant supervision techniquie by taking the semantic similarity between sentences and the label of triples’ predicate into account using different semantic similarity measures based on pre-trained word embeddings. This method is applied in the M-ATOLL framework. Details of the implemented approaches can be found in our paper: [Denoising Distant Supervision for Ontology Lexicalization using Semantic Similarity Measures](submitted to Expert System with Applications).
 
 
-```java
+
+
+
+
+## Setup
+
+1. Download Pretrained BERT Embeddings and put it in following directory:
+```
+Embeddings/bert
+```
+
+3. Download ontology lexicalization dataset from:
+```
+http://dblexipedia.org/public/Input_EN.tar.gz
+```
+
+4. Extract the ontology lexicalization dataset to:
+```
+resources/Mappings
+```
+
+5. Install the project with:
+```
+mvn install
+```
+
+#Getting Started
+Before running the JAVA ontology lexicon generator, run the Python word embeddings server as:
+```
+python PythonServers/FTBERTServer.py
+```
+
+To gernerate ontology lexicon by default configuration, run the following MAVEN commands:
+```
 mvn clean && mvn install
-mvn exec:java -Dexec.mainClass="de.citec.sc.matoll.process.Matoll" -Dexec.args="--mode=train /path/to/inputFiles/ /path/to/config.xml"
+mvn exec:java -Dexec.mainClass="process.Matoll" -Dexec.args="--mode=train /path/to/inputMappings/ /path/to/config.xml"
+```
+
+You can change the default cofiguaration in config.xml file.
+
+
+##Evaluation
+To evalute the generated ontology lexicon, run:
+mvn exec:java -e -Dexec.mainClass="evaluation.RunEvaluationAll" -Dexec.args="/path/to/output/Ontologylexicon/filePattern"
+
+"filePattern" is the name of the generated ontology lexicon file in which the similaritymeasure and threshold are replaced by "#SIM_METHOD#" and "#SIM_THRESHOLD#", respectively(e.g. Autogen2020_BERT_#SIM_METHOD#_#SIM_THRESHOLD#.ttl)
+
+##Other embeddings
+Other word embeddings can be used instead of BERT. For each word embeddings, run it's specific Python server and JAVA program. See the following folders for more Python Server and Java processors, respectively:
 
 ```
-Input examples to test M-ATOLL can be found here:
-
-*	[English] (http://dblexipedia.org/public/Input_EN.tar.gz)
-* 	[German] (http://dblexipedia.org/public/Input_DE.tar.gz)
-*  [Spanish] (http://dblexipedia.org/public/Input_ES.tar.gz)
-
-
-The following is an example for the config.xml
-
-```xml
-<Config>
-   <Language>EN</Language>
-   <Coreference>False</Coreference>
-   <GoldStandardLexicon>../lexica/dbpedia_en.rdf</GoldStandardLexicon>
-   <OutputLexicon>dbpedia2014Full_new.lex</OutputLexicon>
-   <Output>dbpedia2014.eval</Output>
-   <NumLexItems>10000</NumLexItems>
-   <RemoveStopwords>True</RemoveStopwords>
-   <BaseURI>http://localhost:8080/</BaseURI>
-</Config>
-
+PythonServers
 ```
-Using the input examples above and the currently (October 2015) implemented pattern, the results for the DBpedia 2014 ontology are the following:
+and 
+```
+process
+```
 
-*	[English] (http://dblexipedia.org/public/dbpedia2014_EN.ttl)
-* 	[German] (http://dblexipedia.org/public/dbpedia2014_DE.ttl)
-*  [Spanish] (http://dblexipedia.org/public/dbpedia2014_ES.ttl)
 
-## Label-based Approach
+The main contributors of this repository is:
+- [Mehdi Jabalameli](https://github.com/mjameli)
 
-Currently under construction.
 
-<!--## What do I have to do to port MATOLL to other languages? -->
+Contact: Mehdi Jabalameli, mjameli@yahoo.com
+
+
+Don't hesitate to send me an e-mail or report an issue, if something is broken (and it shouldn't be) or if you have further questions.
+
+> This repository contains experimental software and is published for the sole purpose of giving additional background details on the respective publication.
+
+
+
+
+
+
+
